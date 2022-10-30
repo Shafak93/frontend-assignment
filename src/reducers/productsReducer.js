@@ -18,18 +18,15 @@ const productsReducer = (state = initialState, action) => {
         error: null,
       };
     }
-    case "FAILED_DATA":
-      {
-        return {
-          isLoading: false,
-          products: [],
-          error: action.payload,
-        };
-      }
-
-      break;
-
+    case "FAILED_DATA": {
+      return {
+        isLoading: false,
+        products: [],
+        error: action.payload,
+      };
+    }
     default:
-      break;
+      return state;
   }
 };
+export default productsReducer;
