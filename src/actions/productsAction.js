@@ -1,10 +1,10 @@
 import axios from "axios";
 export const getAllProducts = async (dispatch) => {
   try {
-    dispatch({ type: "GET_ALL_DATA" });
+    dispatch({ type: "REQUEST_DATA" });
     const res = await axios.get("https://dummyjson.com/products");
-    dispatch({ type: "GET_DATA_SUCCESS", payload: res.products });
+    dispatch({ type: "SUCCESS_DATA", payload: res.products });
   } catch (error) {
-    dispatch({ type: "GET_DATA_FAILED", payload: error.message });
+    dispatch({ type: "FAILED_DATA", payload: error.message });
   }
 };
